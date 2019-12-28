@@ -31,6 +31,7 @@ def start_to_create(settingMode):
         templates.update({'jiskefet_api_optional_settings': api_optional_settings})
         templates.update(local_Repo)
         templates.update(CERN_SSO)
+        templates.update({'CERN_registered_uri': CERN_registered_uri})
     templates.update({'jiskefet_api_general_settings': api_general_settings})
     templates.update({'jiskefet_oauth_settings': oauth_settings})
     templates.update({'remote_repository_url': remote_repository_url})
