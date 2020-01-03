@@ -1,6 +1,16 @@
 from YmlSkript import *
 
 
+def option ():
+    print('want to do a full configuration setup? y/n\n')
+    choice = input()
+    if choice == 'y' or choice == 'n':
+        start_to_create(choice)
+    else:
+        print('use only y or n\n')
+        option()
+
+
 def get_help():
     with open('help') as f:
         print(f.read())
@@ -14,10 +24,12 @@ def create_yml():
         get_help()
         create_yml()
     elif solution == '':
-        print('want to do a full configuration setup? y/n\n')
-        choice = input()
-        start_to_create(choice)
+        option()
+    else:
+        create_yml()
 
 
 if __name__ == "__main__":
     create_yml()
+
+

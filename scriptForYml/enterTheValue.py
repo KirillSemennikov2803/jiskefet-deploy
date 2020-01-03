@@ -1,11 +1,21 @@
 from ipaddress import ip_address
 import getpass
 import validators
-
+import re 
 
 def set_some_value(nameOfvalue):
+        print('enter ' + nameOfvalue + ':')
+        return input()
+
+
+def set_value_with_check_alphabet_and_number(nameOfvalue):
     print('enter ' + nameOfvalue + ':')
-    return input()
+    some_value = input()
+    if re.match(r'[A-Za-z0-9]', some_value) is not None:
+        return some_value
+    else:
+        print('use only the Latin alphabet and/or numbers')
+        set_some_value(nameOfvalue)
 
 
 def enter_the_host():
@@ -67,6 +77,6 @@ def enter_yes_or_no(nameOfvalue, trueFalse):
     if trueFalse == 1:
         if choice == 'true' or choice == 'false':
             return choice
-    else:
-        print('please enter only true or false')
-        enter_yes_or_no(nameOfvalue, trueFalse)
+        else:
+            print('please enter only true or false')
+            enter_yes_or_no(nameOfvalue, trueFalse)

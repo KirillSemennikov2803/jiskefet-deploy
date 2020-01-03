@@ -8,12 +8,12 @@ def start_to_create(settingMode):
         templates = yaml.safe_load(f)
 
     api_general_settings = {'TYPEORM_HOST': enter_the_host(),
-                            'TYPEORM_USERNAME': set_some_value('username'),
+                            'TYPEORM_USERNAME': set_value_with_check_alphabet_and_number('username'),
                             'TYPEORM_PASSWORD': enter_the_password(),
-                            'TYPEORM_DATABASE': set_some_value('database name')
+                            'TYPEORM_DATABASE': set_value_with_check_alphabet_and_number('database name')
                             }
-    oauth_settings = {'CLIENT_ID': set_some_value('client ID'),
-                      'CLIENT_SECRET': set_some_value('client secret'),
+    oauth_settings = {'CLIENT_ID': set_value_with_check_alphabet_and_number('client ID'),
+                      'CLIENT_SECRET': set_value_with_check_alphabet_and_number('client secret'),
                       'AUTH_REDIRECT_URI': enter_the_redirect_uri()
                       }
     remote_repository_url = {'JISKEFET_API': 'https://github.com/SoftwareForScience/jiskefet-api.git',
