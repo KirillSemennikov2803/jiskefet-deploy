@@ -48,6 +48,36 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.groupBox)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.language = QtWidgets.QPushButton(self.groupBox)
+        self.language.setEnabled(False)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 219, 77))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(233, 233, 198))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(233, 233, 198))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(233, 233, 198))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        self.language.setPalette(palette)
         self.language.setStyleSheet("QPushButton {\n"
 "    font: 10pt \"Arial\";\n"
 "    padding: 4 ;\n"
@@ -62,10 +92,14 @@ class Ui_MainWindow(object):
 "QPushButton:pressed{\n"
 "background-color: #fc0;\n"
 "}\n"
+"QPushButton:disabled{\n"
+"background-color: #e9e9c6;\n"
+"}\n"
 "")
         self.language.setObjectName("language")
         self.horizontalLayout_2.addWidget(self.language)
         self.dark = QtWidgets.QPushButton(self.groupBox)
+        self.dark.setEnabled(False)
         self.dark.setStyleSheet("QPushButton {\n"
 "    font: 10pt \"Arial\";\n"
 "    padding: 4 ;\n"
@@ -79,6 +113,9 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton:pressed{\n"
 "background-color: #fc0;\n"
+"}\n"
+"QPushButton:disabled{\n"
+"background-color: #e9e9c6;\n"
 "}\n"
 "")
         self.dark.setObjectName("dark")

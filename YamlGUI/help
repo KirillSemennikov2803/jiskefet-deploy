@@ -1,0 +1,26 @@
+The use_local_repository variable determines for ansible which repositories to deploy. By filling in 'yes', ansible will deploy the supplied *.tar files. By filling in 'no', ansible will clone the projects from the urls:
+
+use_local_repository: 'no'
+##########
+
+Specify whether the application should use the CERN SSO. If the value is set to 'false', the application will use Github's SSO. The USE_CERN_SSO flag is set to 'false'
+
+USE_CERN_SSO: 'false'
+##########
+
+Change the variable host to the ip address of the database server, the username and password to set the credentials for the database and the database variable to a database name.
+
+jiskefet_api_general_settings:
+  TYPEORM_HOST: 'FILL_IN_YOUR_HOST_HERE'
+  TYPEORM_USERNAME: 'FILL_IN_YOUR_USERNAME_HERE'
+  TYPEORM_PASSWORD: 'FILL_IN_YOUR_PASSWORD_HERE'
+  TYPEORM_DATABASE: 'FILL_IN_YOUR_DATABASE_HERE'
+##########
+
+Fill in the OAuth client id, client secret and the redirect uri (this is the url should end with '/callback').
+
+jiskefet_oauth_settings:
+  CLIENT_ID: 'FILL_IN_YOUR_CLIENT_ID_HERE'
+  CLIENT_SECRET: 'FILL_IN_YOUR_CLIENT_SECRET_HERE'
+  AUTH_REDIRECT_URI: 'http://{{ ansible_remote_address }}/callback'
+##########
