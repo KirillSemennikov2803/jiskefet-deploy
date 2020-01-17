@@ -261,7 +261,7 @@ class fullWindow(QtWidgets.QMainWindow, full.Ui_MainWindow):
             self.close()
         else:
             checkErr = 0
-        se
+        
 
 
 class mainWindow(QtWidgets.QMainWindow, menu.Ui_MainWindow):
